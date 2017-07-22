@@ -34,6 +34,8 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.yesun.myapplication.AlarmWakeLock;
+
 import java.util.Timer;
 
 import bluetooth.BluetoothManager;
@@ -373,6 +375,10 @@ public class BTCTemplateService extends Service {
 				
 				byte[] readBuf = (byte[]) msg.obj;
 				int readCount = msg.arg1;
+
+				//Alarm WakeUp
+				AlarmWakeLock.wakeLock(mContext);
+
 				// send bytes in the buffer to activity
 				if(msg.arg1 > 0) {
 					String strMsg = new String(readBuf, 0, msg.arg1);

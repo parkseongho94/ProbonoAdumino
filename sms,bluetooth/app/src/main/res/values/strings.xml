@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BT Chat</string>
+    <string name="app_name">365 CareGiver</string> //화면 맨 위 app_name 결정
     <string name="service_name">BT Chat Service</string>
 
 
