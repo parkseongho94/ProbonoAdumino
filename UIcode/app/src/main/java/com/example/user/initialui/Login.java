@@ -18,4 +18,9 @@ public class Login extends AppCompatActivity {
         Intent intent_join = new Intent(getApplicationContext(), Join.class);
         startActivity(intent_join);
     }
+    public void ClickLogin(View v){
+        Intent intent_login = new Intent(getApplicationContext(), Myinfo.class);
+        startActivity(intent_login);
+    }
+
 }
