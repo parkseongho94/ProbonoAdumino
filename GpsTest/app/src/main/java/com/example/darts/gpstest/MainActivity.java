@@ -65,14 +65,8 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         btnShowLocation = (Button) findViewById(R.id.btnShowLocation);
 
-        final ApiThread thread = new ApiThread();
-        thread.start();
 
-        try {
-            thread.join();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+
 
 
 
@@ -103,10 +97,18 @@ public class MainActivity extends AppCompatActivity {
                 if(gps.canGetLocation()){
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
-                    result = thread.getResult();
+                    ApiThread thread = new ApiThread(latitude,longitude );
+                    thread.start();
 
+                    try {
+                        thread.join();
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                    result = thread.getResult();
+                    editText.setText(result);
                     // \n is for new line
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: "+result + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: "+ latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
                     // can't get location
                     // GPS or Network is not enabled
