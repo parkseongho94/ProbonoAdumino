@@ -26,6 +26,10 @@ import java.util.Date;
 // http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
 
 public class MainActivity extends AppCompatActivity {
+
+    StringBuilder output = new StringBuilder();
+    String result;
+
     Button btnShowLocation;
     EditText editText;
 
@@ -61,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         btnShowLocation = (Button) findViewById(R.id.btnShowLocation);
 
+        final ApiThread thread = new ApiThread();
+        thread.start();
+
+        try {
+            thread.join();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         mHandler = new Handler(){
             @Override
             public void handleMessage(Message msg){
@@ -88,9 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 if(gps.canGetLocation()){
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
-                    connect(latitude,longitude);
+                    result = thread.getResult();
+
                     // \n is for new line
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: "+result + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
                     // can't get location
                     // GPS or Network is not enabled
@@ -135,11 +151,13 @@ public class MainActivity extends AppCompatActivity {
             }
             handler.post(new Runnable() {
                 public void run() {
-                    tv.setText(strBuilder.toString());
+                    editText.setText(strBuilder.toString());
                 }
             });
         }
         catch(Exception ex) {
             ex.printStackTrace(); Log.e("접속오류", ex.toString()); }
     }
+
+
 }
