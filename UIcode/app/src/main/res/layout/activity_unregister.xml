@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.registeration.UnregisterActivity"> // 액티비티 이름 수정 필요
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        >
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="HelpGiver에 오신것을 환영합니다."
+            android:textColor="#509fff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+            />
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:padding="10dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"
+            android:text="블루투스 연결하기"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:id="@+id/connectBluetooth"/>
+
+        <Button
+            android:padding="10dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"
+            android:text="아두미노 검색하기"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/connectButton"/>
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"
+            android:text="주변병원 정보조회"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/searchButton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="아두미노 상태:"
+            android:textColor="#509fff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="#ff0000"
+            android:text="119 긴급 전화"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/callButton"
+            android:padding="10dp"
+            android:drawableStart="@drawable/ic_phone_black_24dp"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"/>
+
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="#165910"
+            android:text="보호자 연락처 등록"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/phoneRegisterButton"
+            android:drawableStart="@drawable/ic_person_add_black_24dp"
+            android:drawableLeft="@drawable/ic_person_add_black_24dp"/>
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:background="#ffe600"
+            android:text="저장된 메세지 송신"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/sendButton"
+            android:padding="10dp"
+            android:drawableStart="@drawable/ic_message_black_24dp"
+            android:drawableLeft="@drawable/ic_message_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="보호자의 연락처를 등록하셔야 \n 위급상황시 연락이 가능합니다."
+            android:textColor="#ff5650"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

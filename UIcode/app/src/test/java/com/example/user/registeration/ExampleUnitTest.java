@@ -1,4 +1,4 @@
-package com.example.user.initialui;
+package com.example.user.registeration;
 
 import org.junit.Test;
 

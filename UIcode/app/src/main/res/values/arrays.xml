@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major">
+        <item>안과</item>
+        <item>치과</item>
+        <item>외과</item>
+        <item>내과</item>
+    </string-array>
+
+    <string-array name="age">
+        <item> ~ 10대</item>
+        <item> 10~20대</item>
+        <item> 20~30대</item>
+        <item> 30~40대</item>
+        <item> 40~50대</item>
+        <item> 60~70대</item>
+        <item> 70~80대</item>
+        <item> 80대 이상</item>
+
+    </string-array>
+
+
+
+</resources>
